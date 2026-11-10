@@ -146,7 +146,7 @@ If `XDG_CONFIG_HOME` is set, Terminalgram uses that directory instead of `~/.con
 
 The session file contains authentication-related data and should be treated like a password. Terminalgram attempts to restrict the configuration directory to owner-only access (`0700`) and the session file to owner read/write access (`0600`) on platforms that support POSIX permissions. Permission handling is best-effort on Windows and filesystems that do not implement these permission bits.
 
-**Never commit or share `session.json`.** The included `.gitignore` excludes common local configuration and secret files. Use `python Terminalgram.py --logout` to delete the saved local session. This does not log out other devices or delete your Instagram account.
+**Never commit or share `session.json`.** Use `python Terminalgram.py --logout` to delete the saved local session. This does not log out other devices or delete your Instagram account.
 
 ## How it works
 
