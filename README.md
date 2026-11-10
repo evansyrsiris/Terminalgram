@@ -199,10 +199,6 @@ Terminalgram/
 - [Rich](https://github.com/Textualize/rich) — styled terminal text.
 - [instagrapi](https://github.com/subzeroid/instagrapi) — unofficial Instagram API client.
 
-## License
-
-No license is currently specified. Add a license before publishing if you want to define how others may use, modify, or distribute the project.
-
 ---
 
 Made as a Python terminal application project.
