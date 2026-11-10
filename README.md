@@ -1,11 +1,11 @@
-# Terstagram
+# Terminalgram
 
 **Instagram Direct Messages in your terminal. Nothing else.**
 
-Terstagram is a keyboard-driven terminal application for browsing Instagram Direct conversations and sending text messages. It is built with Python, [Textual](https://textual.textualize.io/) and [Rich](https://rich.readthedocs.io/), with [`instagrapi`](https://github.com/subzeroid/instagrapi) providing the Instagram connection.
+Terminalgram is a keyboard-driven terminal application for browsing Instagram Direct conversations and sending text messages. It is built with Python, [Textual](https://textual.textualize.io/) and [Rich](https://rich.readthedocs.io/), with [`instagrapi`](https://github.com/subzeroid/instagrapi) providing the Instagram connection.
 
 > [!WARNING]
-> Terstagram relies on an **unofficial private Instagram API** through `instagrapi`. Its use may violate Instagram's Terms of Use. The API can change or stop working without notice, and Instagram may require additional verification, rate-limit requests, or restrict accounts. Use this project only if you understand these risks. Do not use an account whose loss of access would cause you harm. This project is not affiliated with or endorsed by Instagram or Meta.
+> Terminalgram relies on an **unofficial private Instagram API** through `instagrapi`. Its use may violate Instagram's Terms of Use. The API can change or stop working without notice, and Instagram may require additional verification, rate-limit requests, or restrict accounts. Use this project only if you understand these risks. Do not use an account whose loss of access would cause you harm. This project is not affiliated with or endorsed by Instagram or Meta.
 
 ## Features
 
@@ -31,8 +31,8 @@ Terstagram is a keyboard-driven terminal application for browsing Instagram Dire
 Clone the repository and enter its directory:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/terstagram.git
-cd terstagram
+git clone https://github.com/YOUR_USERNAME/Terminalgram.git
+cd Terminalgram
 ```
 
 Create and activate a virtual environment (recommended):
@@ -79,7 +79,7 @@ You can provide the account username as an argument:
 python Terminalgram.py --username YOUR_USERNAME
 ```
 
-The password is requested interactively using a password prompt and is not written to the session file. If Instagram requests a two-factor authentication code, Terstagram prompts for it.
+The password is requested interactively using a password prompt and is not written to the session file. If Instagram requests a two-factor authentication code, Terminalgram prompts for it.
 
 ### Command-line options
 
@@ -139,18 +139,18 @@ python Terminalgram.py --logout
 The saved session is stored at:
 
 ```text
-~/.config/terstagram/session.json
+~/.config/Terminalgram/session.json
 ```
 
-If `XDG_CONFIG_HOME` is set, Terstagram uses that directory instead of `~/.config`.
+If `XDG_CONFIG_HOME` is set, Terminalgram uses that directory instead of `~/.config`.
 
-The session file contains authentication-related data and should be treated like a password. Terstagram attempts to restrict the configuration directory to owner-only access (`0700`) and the session file to owner read/write access (`0600`) on platforms that support POSIX permissions. Permission handling is best-effort on Windows and filesystems that do not implement these permission bits.
+The session file contains authentication-related data and should be treated like a password. Terminalgram attempts to restrict the configuration directory to owner-only access (`0700`) and the session file to owner read/write access (`0600`) on platforms that support POSIX permissions. Permission handling is best-effort on Windows and filesystems that do not implement these permission bits.
 
 **Never commit or share `session.json`.** The included `.gitignore` excludes common local configuration and secret files. Use `python Terminalgram.py --logout` to delete the saved local session. This does not log out other devices or delete your Instagram account.
 
 ## How it works
 
-1. Terstagram attempts to load and validate a previously saved session.
+1. Terminalgram attempts to load and validate a previously saved session.
 2. If the saved session cannot be resumed, it requests login credentials and handles a two-factor prompt when required.
 3. Textual starts the terminal interface.
 4. Background workers retrieve the inbox and messages without blocking the UI.
@@ -175,9 +175,9 @@ The tests do not log in to Instagram or make network requests.
 ## Project structure
 
 ```text
-terstagram/
+Terminalgram/
 ├── Terminalgram.py          # Textual application and Instagram integration
-├── terstagram_core.py       # UI-independent helpers and message reconciliation
+├── Terminalgram_core.py       # UI-independent helpers and message reconciliation
 ├── requirements.txt         # Runtime dependencies
 ├── tests/
 │   └── test_terminalgram.py # Offline unit tests
